@@ -100,7 +100,7 @@ namespace Yukiko
             roles = _roles.Where(x => x.MessageId == msg.Id);
             if (roles.Count() == 0)
                 return null;
-            roles = _roles.Where(x => x.Emote == react.Emote);
+            roles = _roles.Where(x => x.Emote.Name == react.Emote.Name);
             if (roles.Count() == 0)
                 return null;
             return roles.FirstOrDefault()?.Role;
